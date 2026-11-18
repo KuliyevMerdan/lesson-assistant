@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Ассистент урока</title>
+</head>
+<body>
+  <!-- Экран запуска: выбор темы -->
+  <section id="launch" class="view">
+    <h1>Ассистент урока</h1>
+    <p class="muted">Открытый ИИ-помощник. Виден на экране, отвечает только по нажатию клавиши.</p>
+
+    <label>Тема урока
+      <input id="topic" type="text" placeholder="Напр.: React hooks / английские времена" />
+    </label>
+
+    <label>Ключ Claude API
+      <input id="apiKey" type="password" placeholder="sk-ant-…" />
+      <small class="muted">Не сохраняется на диск — только на время сессии.</small>
+    </label>
+
+    <button id="startBtn">Начать урок</button>
+    <p id="launchError" class="error"></p>
+  </section>
+
+  <!-- Основной экран -->
+  <section id="main" class="view hidden">
+    <header>
+      <div>
+        <div class="topic" id="topicLabel"></div>
+        <div class="badge">ИИ-ассистент · виден на экране</div>
+      </div>
+      <div class="status" id="status">…</div>
+    </header>
+
+    <div class="hint">Нажми <kbd id="hotkeyLabel">⌘⇧⏎</kbd>, чтобы ответить на последний вопрос.</div>
+
+    <div class="panel">
+      <div class="panel-title">Расшифровка (живая)</div>
+      <div id="transcript" class="transcript"></div>
+    </div>
+
+    <div class="panel grow">
+      <div class="panel-title">Ответ</div>
+      <div id="answer" class="answer muted">Здесь появится ответ после нажатия горячей клавиши.</div>
+    </div>
+
+    <div class="manual">
+      <input id="manualInput" type="text" placeholder="…или введи вопрос вручную" />
+      <button id="askBtn">Спросить</button>
+    </div>
+  </section>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

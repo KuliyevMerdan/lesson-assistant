@@ -1,0 +1,15 @@
+{
+  "name": "lesson-assistant",
+  "version": "0.1.0",
+  "description": "Открытый ИИ-ассистент урока: постоянно слушает микрофон, отвечает только по горячей клавише. Окно намеренно видно при демонстрации экрана.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest"
+  },
+  "devDependencies": {
+    "electron": "latest"
+  }
+}
